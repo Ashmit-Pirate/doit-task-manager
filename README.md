@@ -2,7 +2,7 @@
 
 A production-grade task management web application built with the MERN stack and TypeScript.
 
-**Live Demo:** [doit-task-manager.vercel.app](https://your-vercel-url.vercel.app) &nbsp;|&nbsp; **Backend API:** [doit-api.onrender.com](https://your-render-url.onrender.com)
+**Live Demo:** [https://doit-task-manager-ashen.vercel.app](https://doit-task-manager-ashen.vercel.app) &nbsp;|&nbsp; **Backend API:** [https://doit-task-manager.onrender.com](https://doit-task-manager.onrender.com)
 
 > ⚠️ The backend is hosted on Render's free tier and may take 30–50 seconds to respond after a period of inactivity. This is expected behavior — the app is fully functional once the server wakes up.
 
