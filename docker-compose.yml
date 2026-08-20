@@ -1,0 +1,28 @@
+services:
+  # ── Backend (Express API) ──────────────────────────────────
+  backend:
+    build: ./backend
+    container_name: doit-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env          # PORT, MONGO_URI, JWT_SECRET, JWT_EXPIRES_IN
+    environment:
+      - NODE_ENV=production
+
+  # ── Frontend (Vite → nginx) ────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Point the frontend at the backend's public URL.
+        # Override this when deploying to a real server:
+        #   VITE_API_URL=https://api.yourdomain.com/api
+        VITE_API_URL: http://localhost:5000/api
+    container_name: doit-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
